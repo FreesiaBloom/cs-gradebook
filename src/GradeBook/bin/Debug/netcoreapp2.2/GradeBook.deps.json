@@ -5,6 +5,9 @@
   },
   "compilationOptions": {},
   "targets": {
+    ".NETCoreApp,Version=v2.2": {
+      "GradeBook/1.0.0": {
+        "runtime": {
           "GradeBook.dll": {}
         }
       }
