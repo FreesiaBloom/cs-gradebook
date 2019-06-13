@@ -86,7 +86,7 @@ namespace GradeBook.Tests
             Assert.Same(book1, book2);
         }
 
-        private Book GetBook(string name)
+        Book GetBook(string name)
         {
             return new Book(name);
         }
