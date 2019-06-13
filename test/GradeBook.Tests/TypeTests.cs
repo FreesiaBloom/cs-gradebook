@@ -3,8 +3,28 @@ using Xunit;
 
 namespace GradeBook.Tests
 {
+
     public class TypeTests
     {
+
+        [Fact]
+        public void ValueTypesAlsoPasByValue()
+        {
+            var x = GetInt();
+            SetInt(ref x);
+            
+            Assert.Equal(42, x);
+        }
+
+        private void SetInt(ref int x)
+        {
+            x = 42;
+        }
+
+        private int GetInt()
+        {
+            return 3;
+        }
 
         [Fact]
         public void CSharpCanPassByValue()
@@ -31,6 +51,21 @@ namespace GradeBook.Tests
             SetName(book1, "New Name");
             
             Assert.Equal("New Name", book1.Name);
+        }
+
+        [Fact]
+        public void Strings() 
+        {
+            string name = "Agata";
+            var upper = MakeUpperCase(name);
+
+            Assert.Equal("Agata", name);
+            Assert.Equal("AGATA", upper);
+        }
+
+        private string MakeUpperCase(string param)
+        {
+            return param.ToUpper();
         }
 
         [Fact]
