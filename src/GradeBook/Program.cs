@@ -7,26 +7,19 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
-            Book book2 = new Book();
-            book2.AddGrade(90.1);
-            
-            var book = new Book();
+            var book = new Book("Bartek's Grade Book");
+
             book.AddGrade(89.1);
-            
-            var grades = new List<double>() { 12.7, 10.3, 6.11, 4.1 };
-            var result = 0.0;
-
+            book.AddGrade(90.5);
+            book.AddGrade(77.6);
             book.AddGrade(86.1);
+            book.AddGrade(76.2);
+            book.AddGrade(92.3);
+            book.AddGrade(75.4);
+            book.AddGrade(53.7);
+            book.ShowStatistics();
 
-
-            foreach (double number in grades)
-            {
-                result += number;
-            }
-
-            result /= grades.Count;
-
-            System.Console.WriteLine($"The average grade is {result:N1}!");
+            
         }
     }
 }
