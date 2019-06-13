@@ -6,10 +6,12 @@ namespace GradeBook
     public class Book
     {
         private List<double> grades = new List<double>();
+        public string Name;
         
         public Book(string name)
         {
             grades = new List<double>();
+            this.Name = name;
         }
 
         public void AddGrade(double grade)
@@ -24,7 +26,7 @@ namespace GradeBook
             result.High = double.MinValue;
             result.Low = double.MaxValue;
 
-            foreach (double number in this.grades)
+            foreach (var number in this.grades)
             {
                 result.High = Math.Max(number, result.High);
                 result.Low = Math.Min(number, result.Low);
